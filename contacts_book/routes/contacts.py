@@ -51,7 +51,7 @@ async def get_contacts(
     dependencies=[Depends(RateLimiter(times=10, seconds=60))],
     name="Upcoming birthdays",
 )
-async def get_contact(
+async def get_upcoming_birthdays(
     db: Session = Depends(get_db),
     current_user: User = Depends(auth_service.get_current_user),
 ):
